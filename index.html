@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.18/jquery.datetimepicker.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.18/build/jquery.datetimepicker.full.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title></title>
+</head>
+
+<body>
+    <form id="repository">
+        <a href="https://github.com/wiereS/REDSTONE-Scheduler">github repository</a>
+    </form>
+
+    <form id="form1">
+        Red Stone 欠片集めスケジューラー
+    </form>
+
+    <div class="btngroup1">
+        <div class="funcbtn1-1">
+            <form>
+                テーブルに入力した内容を
+                <a id="download_href" href="#" onclick="downloadForm()">ダウンロード</a>
+            </form>
+            <form>
+                ローカルファイルからアップロード
+                <input id="upload" type="file" />
+            </form>
+        </div>
+        <div class="funcbtn1-2">
+            <form>
+                <input type="button" value="1行追加" onclick="addLine('variable_tbl')" />
+                <input type="button" value="5行追加" onclick="addLines('variable_tbl', 5)" />
+            </form>
+            <form>
+                <input type="button" value="1行削除" onclick="delLine('variable_tbl')" />
+                <input type="button" value="5行削除" onclick="delLines('variable_tbl', 5)" />
+            </form>
+        </div>
+        <div class="funcbtn1-3">
+            <form>
+                テーブルを全て
+                <input type="button" value="削除" onclick="flushLines('variable_tbl')" />
+            </form>
+        </div>
+    </div>
+
+    <div class="btngroup2">
+        <div class="funcbtn2-1">
+            <form>
+                <input id="order" type="button" value="整列" onclick="btnOrder()" />
+                <input type="checkbox" id="checkbox" />整列時にWeb Storageにキャラクターデータを保存する
+            </form>
+        </div>
+        <div class="funcbtn2-2">
+            <form>
+                Web Storageに保存したデータを
+                <input type="button" value="削除" onclick="btnFlushStorage()" />
+            </form>
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <table class="variable_tbl" id="variable_tbl">
+            <tr>
+                <th>キャラ名</th>
+                <th>入手</th>
+                <th>抽出器日付</th>
+                <th>BF走り</th>
+                <th>性向地</th>
+                <th>欠片集め</th>
+                <th></th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="totop"><a href="#">上へ戻る</a></div>
+
+    <script src="rschars.js"></script>
+    <script src="formif.js"></script>
+    <script src="addtablerow.js"></script>
+    <script src="inittable.js"></script>
+
+</body>
+</html>
